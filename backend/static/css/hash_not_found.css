@@ -1,0 +1,47 @@
+@keyframes fadeInDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.main-view {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    height: 100%;
+}
+
+.info-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    width: 300px;
+
+    animation: fadeInDown 1s;
+}
+.line {
+    height: 100%;
+}
+.message-title {
+    font-size: 25px;
+}
+.message-info {
+    font-size: 12px;
+}
+.status-code {
+    color: #4BB543;
+}
+.custom-a{
+    color: #4BB543;
+}
+.custom-a{
+    color: #4BB543;
+}

@@ -1,0 +1,24 @@
+{% load static %}
+
+<!doctype html>
+<html lang="pl">
+<head>
+    <meta charset="utf-8">
+    <title>{{ title }}</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <link href="{% static 'css/main.css' %}" rel="stylesheet" type="text/css">
+    {% block extra_css %}
+    {% endblock extra_css %}
+</head>
+
+<body class="bg-dark main-font">
+
+{% block frame %}
+
+{% endblock frame %}
+
+{% block extra_js %}
+{% endblock extra_js %}
+</body>
+</html>

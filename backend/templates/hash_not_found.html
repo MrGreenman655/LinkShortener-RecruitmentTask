@@ -1,0 +1,18 @@
+{% extends '_frame.html' %}
+{% load static %}
+{% block content %}
+    <div class="main-view">
+        <div class="info-box">
+            <div class="line"><span class="message-title"><span class="status-code">404</span> Short url not found.</span></div>
+            <div class="line">
+                <span>Create your own short url </span>
+                <a class="custom-a" href="{% url "swagger-ui-v1" %}">here</a>
+                <span>!</span>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block extra_css %}
+    <link href="{% static 'css/hash_not_found.css' %}" rel="stylesheet" type="text/css">
+{% endblock %}

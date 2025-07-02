@@ -1,0 +1,37 @@
+name: link_shortener
+
+version: '3.8'
+
+services:
+  web:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    command: python manage.py runserver 0.0.0.0:${DJANGO_INTERNAL_PORT}
+    volumes:
+      - ./backend:/app
+    ports:
+      - "${DJANGO_INTERNAL_PORT}:${DJANGO_EXTERNAL_PORT}"
+    env_file:
+      - .env
+    depends_on:
+      - db
+      - redis
+
+  db:
+    image: postgres:15
+    env_file:
+      - .env
+    ports:
+      - "${POSTGRES_PORT}:${POSTGRES_PORT}"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data/
+
+  redis:
+    image: redis:7
+    ports:
+      - "${REDIS_PORT}:${REDIS_PORT}"
+    env_file:
+      - .env
+volumes:
+  postgres_data:
