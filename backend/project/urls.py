@@ -33,5 +33,5 @@ urlpatterns = [
     path("api/v1/docs/", SpectacularSwaggerView.as_view(url_name="schema-v1"), name="swagger-ui-v1"),
     path("<str:hash>", HashRedirectView.as_view(), name="main-redirect"),
     path("", RedirectView.as_view(url=reverse_lazy("swagger-ui-v1"))),
-    path("hash-not-found/", HashNotFoundTemplateView.as_view(), name="hash_not_found")
+    path("hash-not-found/", HashNotFoundTemplateView.as_view(), name="hash_not_found"),
 ]

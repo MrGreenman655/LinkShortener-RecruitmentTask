@@ -1,6 +1,10 @@
-from django.urls import path
+from rest_framework.routers import DefaultRouter
 
-from api_v1.views import LinkShortenerApiView
+from api_v1.views import LinkApiViewSet
 
 app_name = "api_v1"
-urlpatterns = [path("link-shortener/", LinkShortenerApiView.as_view(), name="link-shortener")]
+urlpatterns = []
+
+router = DefaultRouter()
+router.register(r"links", LinkApiViewSet, basename="links")
+urlpatterns += router.urls

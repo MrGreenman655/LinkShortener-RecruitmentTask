@@ -63,7 +63,7 @@ class GetUrlService:
         return url
 
     @classmethod
-    def _build_url(cls, short_url_hash: str):
+    def _build_url(cls, short_url_hash: str) -> str:
         return f"{settings.HOST_ADDR}/{short_url_hash}"
 
 
@@ -78,7 +78,7 @@ class CreateUrlService:
         return GetUrlService.get_short_url(url)
 
     @classmethod
-    def _create_short_hash(cls, url):
+    def _create_short_hash(cls, url) -> None:
         obj = Link.objects.create(url=url)
         url_hash = Base62.encode(obj.id + 10000)
         obj.short_url_hash = url_hash

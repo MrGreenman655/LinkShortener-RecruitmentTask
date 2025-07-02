@@ -16,5 +16,5 @@ class HashRedirectView(RedirectView):
 class HashNotFoundTemplateView(TemplateView):
     template_name = "hash_not_found.html"
     extra_context = {
-        'title': "Short url not found!",
+        "title": "Short url not found!",
     }
